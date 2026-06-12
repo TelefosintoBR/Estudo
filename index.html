@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Furo Jam</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Navegação -->
+  <header class="barra-navegacao">
+    <div class="logo-navegacao">
+      <div class="icone-logo">
+        <img src="..//Furo Jam/FurJam.png" alt="Furo Jam Logo" />
+      </div>
+      <span class="texto-logo">Furo Jam</span>
+    </div>
+    <nav class="links-nav">
+      <a href="#">Menu</a>
+      <a href="#">Jogos</a>
+      <a href="#">Eventos</a>
+      <a href="#">Categorias</a>
+      <a href="#" class="btn-entrar">Login/Registrar</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="destaque">
+    <div class="indicador-rolagem-destaque" role="tablist">
+      <button class="indicador ativo" data-index="0" aria-label="Slide 1"></button>
+      <button class="indicador" data-index="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="destaque-slides">
+      <div class="destaque-slide active">
+        <div class="destaque-conteudo">
+          <div class="destaque-imagem-principal">
+            <div class="placeholder-imagem grande">
+              <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/113200/ss_57c7fb142d6b8f7d38ab62d9f39a055a5b2d4c4c.1920x1080.jpg?t=1643480517" alt="The Binding of Isaac" />
+            </div>
+          </div>
+          <div class="destaque-cartao">
+            <div class="destaque-cartao-miniatura">
+              <div class="placeholder-imagem medio">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/113200/header.jpg?t=1643480517" alt="The Binding of Isaac" />
+              </div>
+            </div>
+            <div class="destaque-cartao-info">
+              <p class="rotulo-cartao">STATUS: Versão Completa Lançada, e versão antiga disponível.</p>
+              <div class="tags" aria-label="tags do jogo">
+                <button type="button" class="tag categoria">Ação</button>
+                <button type="button" class="tag jam">Ludum Dare 49</button>
+                <button type="button" class="tag categoria">Singleplayer</button>
+                <button type="button" class="tag">Roguelike</button>
+              </div>
+              <p>The Binding of Isaac é um RPG de ação com elementos roguelike gerados aleatoriamente.
+                 Acompanhando Isaac em sua jornada, os jogadores encontrarão tesouros bizarros que transformam a forma de Isaac, 
+                 concedendo-lhe habilidades sobre-humanas e permitindo que ele enfrente hordas de criaturas misteriosas,
+                 descubra segredos e lute para chegar em segurança.</p>
+                 <h3 class="Mini-Titulo">Ver. Jam Version</h3>
+              <a href="https://store.steampowered.com/app/113200/The_Binding_of_Isaac/" class="btn-steam" target="_blank" rel="noopener noreferrer">Steam</a>
+              <h3 class="Mini-Titulo">Ver. Full Game</h3>
+              <a href="https://store.steampowered.com/app/250900/The_Binding_of_Isaac_Rebirth/" class="btn-steam" target="_blank" rel="noopener noreferrer">Steam</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="destaque-slide">
+        <div class="destaque-conteudo">
+          <div class="destaque-imagem-principal">
+            <div class="placeholder-imagem grande">
+              <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/ss_1098b655a622720cfd549b104736a4eca8948100.1920x1080.jpg?t=1714089525" alt="Celeste gameplay" />
+            </div>
+          </div>
+          <div class="destaque-cartao">
+            <div class="destaque-cartao-miniatura">
+              <div class="placeholder-imagem medio">
+                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525" alt="Celeste" />
+              </div>
+            </div>
+            <div class="destaque-cartao-info">
+              <p class="rotulo-cartao">STATUS: Versão Completa Lançada, e versão antiga disponível (Gratuita).</p>
+              <div class="tags" aria-label="tags do jogo">
+                <button type="button" class="tag">Indie</button>
+                <button type="button" class="tag jam">PICO-8 Game Jam</button>
+              </div>
+              <p>Ajude Madeline a enfrentar seus demônios internos em sua jornada até o topo da Montanha Celeste, 
+                nesse jogo de plataforma super afiado dos criadores de TowerFall. Desbrave centenas de desafios meticulosos, 
+                descubra segredos complicados e desvende o mistério da montanha.</p>
+              <h3 class="Mini-Titulo">Ver. Jam Version</h3>
+              <a href="https://www.lexaloffle.com/bbs/?tid=2145" class="btn-primario" target="_blank" rel="noopener noreferrer">Jogue Agora</a>
+              <h3 class="Mini-Titulo">Ver. Full Game</h3>
+              <a href="https://store.steampowered.com/app/504230/Celeste/" class="btn-steam" target="_blank" rel="noopener noreferrer">Steam</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE É GAME JAM -->
+  <section class="sobre">
+    <div class="sobre-interno">
+      <div class="sobre-imagem">
+        <div class="placeholder-imagem medio">
+          <img src="https://img.icons8.com/color/48/controller.png" alt="Controle" />
+        </div>
+      </div>
+      <div class="sobre-texto">
+        <h2>EXPLICAÇÃO O QUE É GAME JAM</h2>
+        <p>Game Jam é um evento onde desenvolvedores de jogos, artistas, 
+          músicos e entusiastas se reúnem para criar jogos em um curto período de tempo, 
+          geralmente 48 a 72 horas. O objetivo é incentivar a criatividade, colaboração e experimentação, 
+          permitindo que os participantes explorem novas ideias e técnicas de desenvolvimento de jogos. 
+          Durante uma Game Jam, os participantes formam equipes ou trabalham individualmente para criar um jogo do zero, 
+          desde a concepção até a implementação, muitas vezes seguindo um tema específico proposto pelos organizadores do evento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTOS JAM -->
+  <section class="eventos">
+    <div class="cabecalho-secao">
+      <h2>EVENTOS JAM</h2>
+    </div>
+    <div class="banner-eventos">
+      <div class="placeholder-imagem extragrande">
+        <span class="icone-imagem icone-grande">&#9707;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOGOS -->
+  <section class="jogos">
+    <div class="cabecalho-secao">
+      <h2>JOGOS</h2>
+    </div>
+    <div class="barra-ferramentas-jogos">
+      <div class="barra-pesquisa"></div>
+      <div class="icone-ferramentas">&#9776;</div>
+    </div>
+    <div class="grade-jogos">
+      <div class="cartao-jogo">
+        <div class="placeholder-imagem pequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="info-jogo">
+          <div class="linha-esqueleto largura-90 azul"></div>
+          <div class="linha-esqueleto largura-70 azul"></div>
+          <div class="linha-esqueleto largura-80 azul"></div>
+        </div>
+      </div>
+      <div class="cartao-jogo">
+        <div class="placeholder-imagem pequeno alternativo"><span class="icone-imagem">&#9707;</span></div>
+        <div class="info-jogo alternativo">
+          <div class="linha-esqueleto largura-90 azul"></div>
+          <div class="linha-esqueleto largura-70 azul"></div>
+          <div class="linha-esqueleto largura-80 azul"></div>
+        </div>
+      </div>
+      <div class="cartao-jogo">
+        <div class="placeholder-imagem pequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="info-jogo">
+          <div class="linha-esqueleto largura-90 azul"></div>
+          <div class="linha-esqueleto largura-70 azul"></div>
+          <div class="linha-esqueleto largura-80 azul"></div>
+        </div>
+      </div>
+      <div class="cartao-jogo">
+        <div class="placeholder-imagem pequeno alternativo"><span class="icone-imagem">&#9707;</span></div>
+        <div class="info-jogo alternativo">
+          <div class="linha-esqueleto largura-90 azul"></div>
+          <div class="linha-esqueleto largura-70 azul"></div>
+          <div class="linha-esqueleto largura-80 azul"></div>
+        </div>
+      </div>
+      <div class="cartao-jogo">
+        <div class="placeholder-imagem pequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="info-jogo">
+          <div class="linha-esqueleto largura-90 azul"></div>
+          <div class="linha-esqueleto largura-70 azul"></div>
+          <div class="linha-esqueleto largura-80 azul"></div>
+        </div>
+      </div>
+      <div class="cartao-jogo">
+        <div class="placeholder-imagem pequeno alternativo"><span class="icone-imagem">&#9707;</span></div>
+        <div class="info-jogo alternativo">
+          <div class="linha-esqueleto largura-90 azul"></div>
+          <div class="linha-esqueleto largura-70 azul"></div>
+          <div class="linha-esqueleto largura-80 azul"></div>
+        </div>
+      </div>
+      <div class="cartao-jogo">
+        <div class="placeholder-imagem pequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="info-jogo">
+          <div class="linha-esqueleto largura-90 azul"></div>
+          <div class="linha-esqueleto largura-70 azul"></div>
+          <div class="linha-esqueleto largura-80 azul"></div>
+        </div>
+      </div>
+      <div class="cartao-jogo">
+        <div class="placeholder-imagem pequeno alternativo"><span class="icone-imagem">&#9707;</span></div>
+        <div class="info-jogo alternativo">
+          <div class="linha-esqueleto largura-90 azul"></div>
+          <div class="linha-esqueleto largura-70 azul"></div>
+          <div class="linha-esqueleto largura-80 azul"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRIADORES -->
+  <section class="criadores">
+    <h2>CRIADORES</h2>
+    <div class="linha-esqueleto largura-50"></div>
+    <div class="linha-esqueleto largura-30"></div>
+    <div class="grade-criadores">
+      <div class="cartao-criador">
+        <div class="placeholder-imagem extrapequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="linha-esqueleto largura-80"></div>
+        <div class="linha-esqueleto largura-60"></div>
+      </div>
+      <div class="cartao-criador">
+        <div class="placeholder-imagem extrapequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="linha-esqueleto largura-80"></div>
+        <div class="linha-esqueleto largura-60"></div>
+      </div>
+      <div class="cartao-criador">
+        <div class="placeholder-imagem extrapequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="linha-esqueleto largura-80"></div>
+        <div class="linha-esqueleto largura-60"></div>
+      </div>
+      <div class="cartao-criador">
+        <div class="placeholder-imagem extrapequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="linha-esqueleto largura-80"></div>
+        <div class="linha-esqueleto largura-60"></div>
+      </div>
+      <div class="cartao-criador">
+        <div class="placeholder-imagem extrapequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="linha-esqueleto largura-80"></div>
+        <div class="linha-esqueleto largura-60"></div>
+      </div>
+      <div class="cartao-criador">
+        <div class="placeholder-imagem extrapequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="linha-esqueleto largura-80"></div>
+        <div class="linha-esqueleto largura-60"></div>
+      </div>
+      <div class="cartao-criador">
+        <div class="placeholder-imagem extrapequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="linha-esqueleto largura-80"></div>
+        <div class="linha-esqueleto largura-60"></div>
+      </div>
+      <div class="cartao-criador">
+        <div class="placeholder-imagem extrapequeno"><span class="icone-imagem">&#9707;</span></div>
+        <div class="linha-esqueleto largura-80"></div>
+        <div class="linha-esqueleto largura-60"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rodape">
+    <div class="btn-primario largo">INSCREVA-SE</div>
+    <div class="linha-esqueleto largura-50 central"></div>
+    <div class="linha-esqueleto largura-40 central"></div>
+    <div class="pontos-rodape">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="links-rodape">
+      <a href="#" class="btn-contorno">Menu</a>
+      <a href="#" class="btn-contorno">Jogos</a>
+      <a href="#" class="btn-contorno">Eventos</a>
+    </div>
+  </footer>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
