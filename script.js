@@ -73,3 +73,30 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay(4000);
   }
 });
+
+// mobile menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const header = document.querySelector('.barra-navegacao');
+  const linksNav = document.querySelector('.links-nav');
+  if (!menuToggle || !header || !linksNav) return;
+
+  function setExpanded(val) {
+    menuToggle.setAttribute('aria-expanded', String(val));
+    if (val) header.classList.add('nav-open'); else header.classList.remove('nav-open');
+  }
+
+  menuToggle.addEventListener('click', (e) => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    setExpanded(!isOpen);
+  });
+
+  // close when clicking a nav link
+  linksNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setExpanded(false)));
+
+  // close when clicking outside header
+  document.addEventListener('click', (e) => {
+    if (!header.classList.contains('nav-open')) return;
+    if (!header.contains(e.target)) setExpanded(false);
+  });
+});
