@@ -29,8 +29,9 @@ html {
 }
 
 body {
+  width: 100%;
   font-family: var(--font-display);
-  background: var(--gray-bg);
+  background-color: #ffffff;
   color: var(--text-dark);
   overflow-x: hidden;
 }
@@ -75,7 +76,21 @@ a { text-decoration: none; color: inherit; }
   display: block;
   object-fit: contain;
 }
-.placeholder-imagem.pequeno  { width: 100%; height: 90px; }
+.placeholder-imagem.pequeno {
+  max-width: 250px;
+  max-width: 215px;
+  height: 215px;
+  overflow: hidden;
+}
+.placeholder-imagem.pequeno img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 420px) {
+  .placeholder-imagem.pequeno { max-width: 80px; }
+}
 .placeholder-imagem.extragrande { width: 100%; height: 200px; }
 .placeholder-imagem.extrapequeno { width: 40px; height: 40px; border-radius: 6px; }
 .placeholder-imagem.alternativo    { background: var(--blue-deep); }
@@ -176,6 +191,7 @@ a { text-decoration: none; color: inherit; }
   justify-content: space-between;
   padding: 0 32px;
   height: 56px;
+  width: 100%;
   border-bottom: 2px solid var(--blue-pale);
   box-shadow: 0 2px 12px rgba(26,26,255,0.06);
 }
@@ -226,6 +242,36 @@ a { text-decoration: none; color: inherit; }
 }
 .links-nav a:not(.btn-entrar):hover { color: var(--blue-mid); }
 
+/* Menu toggle (mobile) */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.menu-toggle .hamburger {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-dark);
+  position: relative;
+}
+.menu-toggle .hamburger::before,
+.menu-toggle .hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--text-dark);
+}
+.menu-toggle .hamburger::before { top: -7px; }
+.menu-toggle .hamburger::after { top: 7px; }
+
 /* =========================================
    HERO
    ========================================= */
@@ -251,6 +297,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .destaque-conteudo {
+  min-width: 50%;
   position: relative;
   display: flex;
   gap: 20px;
@@ -261,7 +308,7 @@ a { text-decoration: none; color: inherit; }
 .sobre-interno,
 .grade-jogos,
 .banner-eventos {
-  max-width: 1200px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
@@ -270,12 +317,14 @@ a { text-decoration: none; color: inherit; }
 }
 
 .destaque-imagem-principal {
+  min-width: 50%;
   flex: 1;
 }
 .destaque-imagem-principal .placeholder-imagem.grande {
   width: 100%;
-  max-width: 520px;
-  Min-width: 450px;
+  max-width: 100%;
+  min-width: 100%;
+  margin: 10px;
   height: auto;
 }
 .destaque-imagem-principal .placeholder-imagem.grande img {
@@ -294,8 +343,9 @@ a { text-decoration: none; color: inherit; }
   flex-shrink: 0;
 }
 .destaque-cartao {
-  width: 50%;
-  max-width: 500px;
+  width: 100%;
+  min-width: 20%;
+  max-width: 40%;
   background: var(--white);
   border-radius: 6px;
   overflow: hidden;
@@ -305,7 +355,7 @@ a { text-decoration: none; color: inherit; }
 .destaque-cartao-miniatura { width: 100%; height: auto; }
 .destaque-cartao-miniatura .placeholder-imagem.medio {
   width: 100%;
-  max-width: 280px;
+  max-width: 75%;
   margin: 12px auto;
   border: 3px solid var(--blue-mid);
   border-radius: 8px;
@@ -428,10 +478,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 .barra-ferramentas-jogos {
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 32px 16px;
+  margin: 12px 32px 16px;
   padding: 8px 12px;
   background: var(--gray-light);
   border-radius: 4px;
@@ -450,27 +501,35 @@ a { text-decoration: none; color: inherit; }
 }
 
 .grade-jogos {
+  align-items: center;
   display: grid;
+  padding: 10px 32px;
+  width: 95%;
   grid-template-columns: 1fr 1fr;
-  gap: 3px;
-  margin: 0 32px;
+  gap: 5px;
   border: 3px solid var(--gray-light);
   border-radius: 4px;
   overflow: hidden;
 }
 .cartao-jogo {
   display: grid;
+  width: 95%;
   grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  border-radius: 4px;
+  overflow: hidden;
 }
 .info-jogo {
+
   background: var(--blue-pale);
   padding: 10px 10px;
+  margin: 1%;
+  border: 1px solid var(--gray-light);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 4px;
 }
-.info-jogo.alternativo { background: var(--blue-light); }
 
 .criadores {
   background: var(--gray-bg);
@@ -555,11 +614,45 @@ a { text-decoration: none; color: inherit; }
   .destaque-conteudo { flex-direction: column; }
   .destaque-cartao { width: 100%; }
   .sobre-interno { flex-direction: column; }
-  .grade-jogos { grid-template-columns: 1fr; margin: 0 16px; }
+  .grade-jogos {
+    margin: 0; 
+    width: 100%;
+    max-width: 100%;
+    padding: 0 12px; 
+    box-sizing: border-box;
+  }
+  .grade-jogos > .cartao-jogo { grid-template-columns: 1fr; }
   .grade-criadores { grid-template-columns: repeat(2, 1fr); }
   .cabecalho-secao { padding: 10px 16px; }
   .barra-ferramentas-jogos { margin: 0 16px 14px; }
   .banner-eventos { padding: 0 16px; }
+
+  /* Prevent horizontal overflow caused by min-widths on small screens */
+  .destaque-imagem-principal .placeholder-imagem.grande { min-width: 0; max-width: 100%; }
+  .destaque-cartao { min-width: 0; max-width: 100%; }
+
+  /* Mobile navigation behavior */
+  .menu-toggle { display: flex; }
+  /* hide desktop nav by default on small screens */
+  .links-nav { display: none; }
+  /* when header has .nav-open, show nav as a panel */
+  .barra-navegacao.nav-open { position: relative; }
+  .barra-navegacao.nav-open .links-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    right: 16px;
+    background: var(--white);
+    padding: 12px;
+    gap: 10px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.14);
+    width: calc(100% - 32px);
+    max-width: 320px;
+    z-index: 150;
+  }
+  .barra-navegacao.nav-open .links-nav a { padding: 8px 6px; }
 }
 
 /* --- Efeito de zoom apenas para miniaturas `.medio` --- */
