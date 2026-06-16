@@ -78,7 +78,6 @@ a { text-decoration: none; color: inherit; }
   object-fit: contain;
 }
 .placeholder-imagem.pequeno {
-  max-width: 250px;
   max-width: 215px;
   height: 215px;
   overflow: hidden;
@@ -511,15 +510,6 @@ a { text-decoration: none; color: inherit; }
   border-radius: 4px;
   overflow: hidden;
 }
-.cartao-jogo {
-  display: grid;
-  height: auto;
-  width: 100%;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-  border-radius: 4px;
-  overflow: hidden;
-}
 .cartao-jogo .placeholder-imagem.pequeno {
   width: 100%;
   max-width: 75%;
@@ -532,6 +522,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
+  object-fit: contain; /* essa linha era da segunda regra */
 }
 .cartao-jogo .placeholder-imagem.pequeno {
   width: 100%;
