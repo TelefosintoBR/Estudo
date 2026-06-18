@@ -15,7 +15,7 @@
   --blue-mid:    #84f649; /* cor de destaque, azul claro 1a1aff 84f649*/
   --blue-light:  #7200c9;
   --blue-pale:   #1a1aff;
-  --white:       #4646ff;
+  --white:       #7ea3ff;
   --gray-light:  #84f649;
   --gray-bg:     #7e7e7e;
   --text-dark:   #0a0a20;
@@ -458,9 +458,9 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--text-dark);
+  color: white;
   margin-bottom: 14px;
-  background: var(--blue-pale);
+  background: rgba(0, 0, 0, 0.350);
   display: inline-block;
   padding: 4px 10px;
 }
@@ -477,9 +477,9 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--text-dark);
+  color: white;
   display: inline-block;
-  background: var(--blue-pale);
+  background: rgba(0, 0, 0, 0.32);
   padding: 4px 14px;
 }
 
@@ -495,8 +495,8 @@ a { text-decoration: none; color: inherit; }
   padding: 20px 32px 14px;
 }
 .eventos .cabecalho-secao h2 {
-  color: var(--white);
-  background: rgba(255,255,255,0.12);
+  color: white;
+  background: rgba(0, 0, 0, 0.32);
 }
 .banner-eventos .placeholder-imagem.muito-grande {
   width: 100%;
@@ -520,14 +520,14 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 2.4rem;
-  color: rgb(144, 0, 160);
+  color: rgb(179, 0, 199);
   letter-spacing: 0.02em;
   margin-top: 16px;
   text-align: center;
 }
 #Link-GMTK {
   color: black;
-  background: rgb(255, 255, 0);
+  background: rgb(199, 189, 0);
   padding: 0 0.2em;
   border-radius: 2px;
 }
@@ -570,11 +570,13 @@ a { text-decoration: none; color: inherit; }
 .grade-jogos {
   display: grid;
   padding: 10px 32px;
-  grid-template-columns: 1fr 1fr;
   gap: 5px;
   border: 3px solid var(--gray-light);
   border-radius: 4px;
   overflow: hidden;
+}
+@media (min-width: 900px){
+  .grade-jogos {grid-template-columns: 1fr 1fr;}
 }
 .cartao-jogo .placeholder-imagem.pequeno {
   max-width: 400px;
@@ -584,7 +586,7 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
   display: flex;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .cartao-jogo .placeholder-imagem.pequeno {
     max-width: 400px;
   }
@@ -683,7 +685,6 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: black;
   margin-top: 14px;
 }
 .paragrafos-branco{
@@ -692,7 +693,7 @@ a { text-decoration: none; color: inherit; }
   color: white;
   margin-top: 12px;
 }
-.texto-branco {
+.texto-branco{
   color: white;
 }
 
@@ -825,16 +826,20 @@ a { text-decoration: none; color: inherit; }
 /* indicadores */
 .indicador-rolagem-destaque { display: flex; gap: 8px; justify-content: center; margin-top: 12px; }
 .indicador {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: rgba(0,0,0,0.15); border: none; cursor: pointer;
-  transition: transform 160ms ease, background-color 160ms ease;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gray);
+    transition: background .15s, transform .15s;
 }
 .indicador.ativo,
 .indicador:hover { background: var(--blue-mid); transform: scale(1.15); }
 /* responsivo: mantém slides empilhados em telas pequenas */
 @media (max-width: 600px) {
-  .destaque-slides { min-height: auto; }
-  .destaque-slide { position: relative; opacity: 1; pointer-events: auto; flex-direction: column; }
+  .destaque-slides { min-height: 320px; width: 100%; }
+  .destaque-slide { position: absolute; opacity: 0; pointer-events: auto; flex-direction: column; }
   .indicador-rolagem-destaque { margin-top: 8px; }
 }
 
