@@ -14,12 +14,12 @@
   --blue-deep:   #000087; /* cor de fundo, azul escuro */
   --blue-mid:    #84f649; /* cor de destaque, azul claro 1a1aff 84f649*/
   --blue-light:  #7200c9;
-  --blue-pale:   #1a1aff;
-  --white:       #7ea3ff;
+  --blue-pale:   #e76f6f;
+  --white:       #0077d2;
   --gray-light:  #84f649;
-  --gray-bg:     #7e7e7e;
-  --text-dark:   #0a0a20;
-  --text-white:   #ffffff;
+  --gray-bg:     #600085;
+  --text-dark:   #ffffff;
+  --text-white:   #000000;
 
   --font-display: 'Syne', sans-serif;
   --font-mono:    'Space Mono', monospace;
@@ -80,7 +80,19 @@ a { text-decoration: none; color: inherit; }
   object-fit: contain;
 }
 
-.placeholder-imagem.extrapequeno { width: 40px; height: 40px; border-radius: 6px; }
+.placeholder-imagem.extrapequeno {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+  margin: 5px;
+}
+.grade-criadores {
+    display: grid;
+    /* auto-fit preenche o espaço disponível com o máximo de colunas possível */
+    /* minmax(calc(25% - 20px), 1fr) tenta manter 4 colunas (25%) respeitando o espaçamento */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px;
+}
 
 .icone-imagem {
   font-size: 2.2rem;
@@ -574,10 +586,26 @@ a { text-decoration: none; color: inherit; }
   border: 3px solid var(--gray-light);
   border-radius: 4px;
   overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
-@media (min-width: 900px){
-  .grade-jogos {grid-template-columns: 1fr 1fr;}
+.grade-jogos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
+
+.cartao-jogo {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.cartao-jogo button, 
+.cartao-jogo .btn-close {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 .cartao-jogo .placeholder-imagem.pequeno {
   max-width: 400px;
   margin: 12px auto;
@@ -645,7 +673,13 @@ a { text-decoration: none; color: inherit; }
   gap: 6px;
 }
 .cartao-criador .placeholder-imagem.extrapequeno {
-  background: var(--blue-mid);
+  background: black;
+}
+.cartao-criador .placeholder-imagem.extrapequeno img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* =========================================
@@ -701,21 +735,13 @@ a { text-decoration: none; color: inherit; }
    RESPONSIVE (Precisa revisão para garantir que tudo fique bem em telas pequenas, especialmente o layout do destaque e da grade de jogos)
      - Ajusta espaçamento e layout para telas menores
    ========================================= */
-@media (max-width: 600px) {
+@media (max-width: 665px) {
   .barra-navegacao { padding: 0 16px; }
   .links-nav { gap: 10px; }
   .destaque { padding: 24px 16px 32px; }
   .destaque-conteudo { flex-direction: column; }
   .destaque-cartao { width: 100%; }
   .sobre-interno { flex-direction: column; }
-  .grade-jogos {
-    margin: 0; 
-    width: 100%;
-    max-width: 100%;
-    padding: 0 12px; 
-    box-sizing: border-box;
-  }
-  .grade-jogos > .cartao-jogo { grid-template-columns: 1fr; }
   .grade-criadores { grid-template-columns: repeat(2, 1fr); }
   .cabecalho-secao { padding: 10px 16px; }
   .barra-ferramentas-jogos { margin: 0 16px 14px; }
